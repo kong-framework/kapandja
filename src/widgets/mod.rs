@@ -1,4 +1,5 @@
-pub mod nav;
+pub use nav::basic::NavBasic;
+mod nav;
 
 pub trait Widget {
     fn html(&self) -> String {
