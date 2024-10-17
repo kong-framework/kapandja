@@ -165,6 +165,10 @@ impl Widget for ServicesWidget {
   #ServicesContentWidget{{
     padding: 1em;
   }}
+
+  .card-title{{
+    font-size: .8em;
+  }}
 }}
 "#
         )

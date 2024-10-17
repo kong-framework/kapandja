@@ -46,6 +46,7 @@ impl Widget for NavBasic {
                 }
             }
         }
+              div .text-center {img #MOBILE_LOGO src=(self.logo){}}
               div #MOBILE_NAVIGATION .dropdown{
                   a .btn.btn-link.dropdown-toggle href=("#"){
                       i .icon.icon-menu{}
@@ -113,7 +114,7 @@ nav {{
   color: {active_link_color} !important;
 }}
 
-#MOBILE_NAVIGATION{{
+#MOBILE_NAVIGATION, #MOBILE_LOGO{{
   display: none;
 }}
 
@@ -122,9 +123,14 @@ nav {{
     display: none
   }}
 
-#MOBILE_NAVIGATION{{
-  display: block;
-}}
+  #MOBILE_LOGO{{
+    width: 80px;
+    margin: 0 auto;
+  }}
+
+  #MOBILE_NAVIGATION,#MOBILE_LOGO{{
+    display: block;    
+  }}
 
 }}
 "#

@@ -14,22 +14,22 @@ impl Widget for ContactWidget {
     fn html(&self) -> String {
         html!(section #ContactWidget {
             div .columns{
-                div .col-3.contact-containers{
+                div .col-3.col-sm-12.contact-containers{
                     h4{i .icon.icon-apps{}}
                     h5{"Phone"}
                     h5 {(self.phone)}
                 }
-                div .col-3.contact-containers{
+                div .col-3.col-sm-12.contact-containers{
                     h4{i .icon.icon-search{}}
                     h5{"Website"}
                     h5 {(self.website)}
                 }
-                div .col-3.contact-containers{
+                div .col-3.col-sm-12.contact-containers{
                     h4{i .icon.icon-mail{}}
                     h5{"Email"}
                     h5 {(self.email)}
                 }
-                div .col-3.contact-containers{
+                div .col-3.col-sm-12.contact-containers{
                     h4{i .icon.icon-edit{}}
                     h5{"Postal"}
                     h5 {(self.postal)}

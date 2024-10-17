@@ -10,6 +10,7 @@ pub struct HeroBasic {
     pub heading_color: Color,
     pub subheading_color: Color,
     pub button_text: String,
+    pub button_url: String,
     pub button_border_color: Color,
     pub button_text_color: Color,
     pub button_background_color: Color,
@@ -20,7 +21,7 @@ impl Widget for HeroBasic {
         html!(section #(HERO) {
             h3 #(HERO_HEADING) {(self.heading)}
             p #(HERO_SUB_HEADING) .col-8.col-lg-4.col-md-8 {(self.subheading)}
-            button #(HERO_BTN) .btn{(self.button_text)}
+            button #(HERO_BTN) .btn{a href=(self.button_url){(self.button_text)}}
         })
         .into_string()
     }
