@@ -19,7 +19,7 @@ impl Widget for HeroBasic {
     fn html(&self) -> String {
         html!(section #(HERO) {
             h3 #(HERO_HEADING) {(self.heading)}
-            p #(HERO_SUB_HEADING) .col-4 {(self.subheading)}
+            p #(HERO_SUB_HEADING) .col-8.col-lg-4.col-md-8 {(self.subheading)}
             button #(HERO_BTN) .btn{(self.button_text)}
         })
         .into_string()
@@ -37,8 +37,9 @@ impl Widget for HeroBasic {
             r#"
 #{HERO} {{
   background-image: url("{img}");
-  height: 50vh;
+  height: 45vh;
   background-size: 100%;
+  background-repeat: no-repeat;
   padding: 4em;
 }}
 
@@ -50,6 +51,7 @@ impl Widget for HeroBasic {
 #{HERO_SUB_HEADING}{{
   color: {subheading_color} !important;
   font-family: "Univers-Regular";
+  text-shadow: 1px 1px 1px #000;
 }}
 
 #{HERO_BTN}{{
@@ -58,6 +60,51 @@ impl Widget for HeroBasic {
  background_color: {button_background_color} !important;
  font-family: "Univers-Regular";
  border-radius: 0;
+}}
+
+
+@media only screen and (max-width: 1183px){{
+  #{HERO} {{
+    height: 30vh; 
+  }}
+
+  #{HERO_HEADING} {{
+    font-size: 1.1em;
+  }}
+
+  #{HERO} {{
+    padding: 2em;
+  }}
+}}
+
+@media only screen and (max-width: 397px){{
+  #{HERO} {{
+    height: 25vh;
+  }}
+
+ #{HERO_BTN} {{
+    display: none;
+  }}
+
+  #{HERO_SUB_HEADING}{{
+    font-size: .8em;
+  }}
+}}
+
+@media only screen and (max-width: 335px){{
+  #{HERO} {{
+    height: 20vh;
+  }}
+}}
+
+@media only screen and (max-width: 274px){{
+  #{HERO} {{
+    height: 15vh;
+  }}
+
+  #{HERO_SUB_HEADING}{{
+    display: none
+  }}
 }}
 "#
         )
