@@ -14,7 +14,7 @@ pub struct ContentBasic {
 
 impl Widget for ContentBasic {
     fn html(&self) -> String {
-        html!(section .basic-conent-section {
+        html!(section #CONTENT_BASIC .basic-conent-section {
             h5 #(CONTENT_HEADING) {(self.heading)}
             div .columns{
                 p .col-6{(self.content)}
