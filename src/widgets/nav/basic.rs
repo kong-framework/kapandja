@@ -15,7 +15,7 @@ pub struct NavBasic {
 
 impl Widget for NavBasic {
     fn html(&self) -> String {
-        html!(nav .navbar {
+        html!(nav #NAVIGATION_BAR .navbar {
             section .navbar-section{
                 @for nav in &self.left_navs {
                     @if nav.active {
@@ -45,7 +45,46 @@ impl Widget for NavBasic {
                     }
                 }
             }
-        })
+        }
+              div #MOBILE_NAVIGATION .dropdown{
+                  a .btn.btn-link.dropdown-toggle href=("#"){
+                      i .icon.icon-menu{}
+                  }
+
+                  ul .menu{
+                      @for nav in &self.left_navs {
+                          @if nav.active {
+                              li .menu-item{
+                                  a .btn.btn-link.(NAVLINK) href=(nav.url) .(ACTIVE){
+                                      (nav.name)
+                                  }
+                              }
+                          } @else {
+                              li .menu-item{
+                                  a .btn.btn-link.(NAVLINK) href=(nav.url){
+                                      (nav.name)
+                                  }
+                              }
+                          }
+                      }
+                      @for nav in &self.right_navs {
+                          @if nav.active {
+                              li .menu-item{
+                                  a .btn.btn-link.(NAVLINK) href=(nav.url) .(ACTIVE){
+                                      (nav.name)
+                                  }
+                              }
+                          } @else {
+                              li .menu-item{
+                                  a .btn.btn-link.(NAVLINK) href=(nav.url){
+                                      (nav.name)
+                                  }
+                              }
+                          }
+                      }
+                  }
+              }
+        )
         .into_string()
     }
 
@@ -72,7 +111,23 @@ nav {{
 
 .{ACTIVE} {{
   color: {active_link_color} !important;
-}}"#
+}}
+
+#MOBILE_NAVIGATION{{
+  display: none;
+}}
+
+@media only screen and (max-width: 663px){{
+  #NAVIGATION_BAR{{
+    display: none
+  }}
+
+#MOBILE_NAVIGATION{{
+  display: block;
+}}
+
+}}
+"#
         )
     }
 }
