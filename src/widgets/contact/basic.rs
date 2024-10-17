@@ -3,38 +3,55 @@ use csscolorparser::Color;
 use maud::html;
 
 pub struct ContactWidget {
-    pub heading: String,
+    pub background_color: Color,
+    pub phone: String,
+    pub website: String,
+    pub email: String,
+    pub postal: String,
 }
 
 impl Widget for ContactWidget {
     fn html(&self) -> String {
         html!(section #ContactWidget {
-            h5 {(self.heading)}
+            div .columns{
+                div .col-3.contact-containers{
+                    h4{i .icon.icon-apps{}}
+                    h5{"Phone"}
+                    h5 {(self.phone)}
+                }
+                div .col-3.contact-containers{
+                    h4{i .icon.icon-search{}}
+                    h5{"Website"}
+                    h5 {(self.website)}
+                }
+                div .col-3.contact-containers{
+                    h4{i .icon.icon-mail{}}
+                    h5{"Email"}
+                    h5 {(self.email)}
+                }
+                div .col-3.contact-containers{
+                    h4{i .icon.icon-edit{}}
+                    h5{"Postal"}
+                    h5 {(self.postal)}
+                }
+            }
         })
         .into_string()
     }
 
     fn css(&self) -> String {
-        let heading_color = &self.heading_color.to_rgb_string();
         let background_color = &self.background_color.to_rgb_string();
-        let image_border_color = &self.image_border_color.to_rgb_string();
 
         format!(
             r#"
-.basic-conent-section{{
+#ContactWidget {{
   padding: 4em;
   background-color: {background_color};
   font-family: "Univers-Regular";
 }}
 
-.basic-conent-section #{CONTENT_HEADING} {{
-  color: {heading_color} !important;
-}}
-
-.basic-conent-section img{{
-  border-top-left-radius: 50px;
-  border-bottom-right-radius: 50px;
-  border: thick solid {image_border_color};
+.contact-containers{{
+  text-align: center;
 }}
 "#
         )
