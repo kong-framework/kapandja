@@ -1,7 +1,7 @@
 use crate::widgets::Widget;
 use maud::{html, PreEscaped, DOCTYPE};
 
-pub struct Epandja {
+pub struct Kapandja {
     pub title: String,
     pub file_path: std::path::PathBuf,
     pub widgets: Vec<Box<dyn Widget>>,
@@ -9,7 +9,7 @@ pub struct Epandja {
     pub js: Option<String>,
 }
 
-impl Epandja {
+impl Kapandja {
     pub fn export(&self) -> std::io::Result<()> {
         println!("Exporting {} page to {:?}", self.title, self.file_path);
 
@@ -29,19 +29,23 @@ impl Epandja {
                     meta charset="UTF-8";
                     meta name="viewport" content="width=device-width, initial-scale=1.0";
                     meta http-equiv="X-UA-Compatible" content="ie=edge";
+                    link rel="stylesheet" href="css/vendor/spectre.min.css";
+                    link rel="stylesheet" href="css/vendor/spectre-exp.min.css";
+                    link rel="stylesheet" href="css/vendor/spectre-icons.min.css";
+
                     title{(title)}
                     @if style != "" {
-                        style{(style)}
+                        style{(PreEscaped(style))}
                     }
                     @if wids.1 != "" {
-                        style{(wids.1)}
+                        style{(PreEscaped(wids.1))}
                     }
                     body{(PreEscaped(wids.0))}
                     @if script != "" {
-                        script{(script)}
+                        script{(PreEscaped(script))}
                     }
                     @if script != wids.2 {
-                        script{(wids.2)}
+                        script{(PreEscaped(wids.2))}
                     }
                 }
         }

@@ -1,6 +1,7 @@
 #![recursion_limit = "512"]
 
-pub use epandja::Epandja;
+pub use csscolorparser::parse as color;
+pub use kapandja::Kapandja;
 
-mod epandja;
+mod kapandja;
 pub mod widgets;

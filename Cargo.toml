@@ -1,8 +1,8 @@
 [package]
-name = "epandja"
+name = "kapandja"
 version = "0.1.0"
 edition = "2021"
 
 [dependencies]
 maud = "0.26.0"
-jss = "0.6.2"
+csscolorparser = "0.7.0"
