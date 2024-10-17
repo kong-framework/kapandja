@@ -12,7 +12,7 @@ impl Widget for ServicesWidget {
     fn html(&self) -> String {
         html!(section #ServicesContentWidget {
             div .columns{
-                div .col-2 {
+                div .col-2.col-sm-4 {
                     div .card{
                         div .card-image{
                             img src="./icons/ict.png" .img-responsive{}
@@ -24,7 +24,7 @@ impl Widget for ServicesWidget {
                         }
                     }
                 }
-                div .col-2 {
+                div .col-2.col-sm-4 {
                     div .card{
                         div .card-image{
                             img src="./icons/conversation.png" .img-responsive{}
@@ -36,7 +36,7 @@ impl Widget for ServicesWidget {
                         }
                     }
                 }
-                div .col-2 {
+                div .col-2.col-sm-4 {
                     div .card{
                         div .card-image{
                             img src="./icons/security.png" .img-responsive{}
@@ -48,7 +48,7 @@ impl Widget for ServicesWidget {
                         }
                     }
                 }
-                div .col-2 {
+                div .col-2.col-sm-4 {
                     div .card{
                         div .card-image{
                             img src="./icons/truck.png" .img-responsive{}
@@ -60,7 +60,7 @@ impl Widget for ServicesWidget {
                         }
                     }
                 }
-                div .col-2 {
+                div .col-2.col-sm-4 {
                     div .card{
                         div .card-image{
                             img src="./icons/brickwall.png" .img-responsive{}
@@ -72,7 +72,7 @@ impl Widget for ServicesWidget {
                         }
                     }
                 }
-                div .col-2 {
+                div .col-2.col-sm-4 {
                     div .card{
                         div .card-image{
                             img src="./icons/management.png" .img-responsive{}
@@ -84,7 +84,7 @@ impl Widget for ServicesWidget {
                         }
                     }
                 }
-                div .col-2 {
+                div .col-2.col-sm-4 {
                     div .card{
                         div .card-image{
                             img src="./icons/flash.png" .img-responsive{}
@@ -96,7 +96,7 @@ impl Widget for ServicesWidget {
                         }
                     }
                 }
-                div .col-2 {
+                div .col-2.col-sm-4 {
                     div .card{
                         div .card-image{
                             img src="./icons/cleaning.png" .img-responsive{}
@@ -108,7 +108,7 @@ impl Widget for ServicesWidget {
                         }
                     }
                 }
-                div .col-2 {
+                div .col-2.col-sm-4 {
                     div .card{
                         div .card-image{
                             img src="./icons/catering.png" .img-responsive{}
@@ -155,6 +155,16 @@ impl Widget for ServicesWidget {
 
 #ServicesContentWidget .card .card-title{{
   color: {heading_color};
+}}
+
+@media only screen and (max-width: 434px){{
+  #ServicesContentWidget .card img{{
+    width: 34px;
+  }}
+
+  #ServicesContentWidget{{
+    padding: 1em;
+  }}
 }}
 "#
         )

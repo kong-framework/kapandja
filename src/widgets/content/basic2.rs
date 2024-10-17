@@ -16,11 +16,11 @@ impl Widget for ContentBasic2 {
     fn html(&self) -> String {
         html!(section .basic2-conent-section {
             div .columns{
-                div .col-6{
+                div .col-6.col-sm-12{
                     img src=(self.image) .img-responsive{}
                 }
                 div .col-1{}
-                div .col-5{
+                div .col-5.col-sm-12{
                     h5 #(CONTENT_HEADING) {(self.heading)}
                     p {(self.content)}
                 }
@@ -51,6 +51,13 @@ impl Widget for ContentBasic2 {
   border-top-left-radius: 50px;
   border-bottom-right-radius: 50px;
   border: thick solid {image_border_color};
+}}
+
+@media only screen and (max-width: 434px){{
+  .basic2-conent-section{{
+    padding: 1em;
+  }}
+  
 }}
 "#
         )

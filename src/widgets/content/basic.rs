@@ -17,9 +17,9 @@ impl Widget for ContentBasic {
         html!(section #CONTENT_BASIC .basic-conent-section {
             h5 #(CONTENT_HEADING) {(self.heading)}
             div .columns{
-                p .col-6{(self.content)}
+                p .col-6.col-sm-12{(self.content)}
                 div .col-1{}
-                div .col-5{
+                div .col-5.col-sm-12{
                     img src=(self.image) .img-responsive{}
                 }
             }
@@ -48,6 +48,13 @@ impl Widget for ContentBasic {
   border-top-left-radius: 50px;
   border-bottom-right-radius: 50px;
   border: thick solid {image_border_color};
+}}
+
+@media only screen and (max-width: 434px){{
+  .basic-conent-section{{
+    padding: 1em;
+  }}
+  
 }}
 "#
         )
