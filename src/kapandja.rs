@@ -8,6 +8,7 @@ pub struct Kapandja {
     pub css: Option<String>,
     pub js: Option<String>,
     pub leaflet: bool,
+    pub font_awesome_icons: bool,
 }
 
 impl Kapandja {
@@ -54,6 +55,13 @@ impl Kapandja {
                         style{(PreEscaped(wids.1))}
                     }
                     body{(PreEscaped(wids.0))}
+
+                    @if self.leaflet {
+                        script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+                            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+                            crossorigin=""{}
+                     }
+
                     @if script != "" {
                         script{(PreEscaped(script))}
                     }
