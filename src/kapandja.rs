@@ -7,6 +7,7 @@ pub struct Kapandja {
     pub widgets: Vec<Box<dyn Widget>>,
     pub css: Option<String>,
     pub js: Option<String>,
+    pub leaflet: bool,
 }
 
 impl Kapandja {
@@ -32,6 +33,18 @@ impl Kapandja {
                     link rel="stylesheet" href="css/vendor/spectre.min.css";
                     link rel="stylesheet" href="css/vendor/spectre-exp.min.css";
                     link rel="stylesheet" href="css/vendor/spectre-icons.min.css";
+
+                    @if self.leaflet {
+                        link rel="stylesheet"
+                            href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+                            integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+                            crossorigin="";
+                    }
+
+                    @if self.font_awesome_icons {
+                        link rel="stylesheet"
+                            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"{}
+                    }
 
                     title{(title)}
                     @if style != "" {
