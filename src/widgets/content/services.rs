@@ -2,120 +2,32 @@ use crate::widgets::Widget;
 use csscolorparser::Color;
 use maud::html;
 
+pub struct ServiceItem {
+    pub icon: String,
+    pub text: String,
+}
+
 pub struct ServicesWidget {
     pub heading: String,
     pub heading_color: Color,
     pub background_color: Color,
+    pub services: Vec<ServiceItem>,
 }
 
 impl Widget for ServicesWidget {
     fn html(&self) -> String {
         html!(section #ServicesContentWidget {
             div .columns{
-                div .col-2.col-sm-4 {
-                    div .card{
-                        div .card-image{
-                            img src="./icons/ict.png" .img-responsive{}
-                        }
-                        div .card-header{
-                            div .card-title .h6{
-                                "Information Technology"
+                @for service in &self.services {
+                    div .col-2.col-sm-4 {
+                        div .card{
+                            div .card-image{
+                                img src=(service.icon) .img-responsive{}
                             }
-                        }
-                    }
-                }
-                div .col-2.col-sm-4 {
-                    div .card{
-                        div .card-image{
-                            img src="./icons/conversation.png" .img-responsive{}
-                        }
-                        div .card-header{
-                            div .card-title .h6{
-                                "Consultancy Services"
-                            }
-                        }
-                    }
-                }
-                div .col-2.col-sm-4 {
-                    div .card{
-                        div .card-image{
-                            img src="./icons/security.png" .img-responsive{}
-                        }
-                        div .card-header{
-                            div .card-title .h6{
-                                "Security & Protection"
-                            }
-                        }
-                    }
-                }
-                div .col-2.col-sm-4 {
-                    div .card{
-                        div .card-image{
-                            img src="./icons/truck.png" .img-responsive{}
-                        }
-                        div .card-header{
-                            div .card-title .h6{
-                                "Transport & Logistics"
-                            }
-                        }
-                    }
-                }
-                div .col-2.col-sm-4 {
-                    div .card{
-                        div .card-image{
-                            img src="./icons/brickwall.png" .img-responsive{}
-                        }
-                        div .card-header{
-                            div .card-title .h6{
-                                "Construction & Renovations"
-                            }
-                        }
-                    }
-                }
-                div .col-2.col-sm-4 {
-                    div .card{
-                        div .card-image{
-                            img src="./icons/management.png" .img-responsive{}
-                        }
-                        div .card-header{
-                            div .card-title .h6{
-                                "Property Development"
-                            }
-                        }
-                    }
-                }
-                div .col-2.col-sm-4 {
-                    div .card{
-                        div .card-image{
-                            img src="./icons/flash.png" .img-responsive{}
-                        }
-                        div .card-header{
-                            div .card-title .h6{
-                                "Electrical & Power Engineering"
-                            }
-                        }
-                    }
-                }
-                div .col-2.col-sm-4 {
-                    div .card{
-                        div .card-image{
-                            img src="./icons/cleaning.png" .img-responsive{}
-                        }
-                        div .card-header{
-                            div .card-title .h6{
-                                "Hygiene & Cleaning"
-                            }
-                        }
-                    }
-                }
-                div .col-2.col-sm-4 {
-                    div .card{
-                        div .card-image{
-                            img src="./icons/catering.png" .img-responsive{}
-                        }
-                        div .card-header{
-                            div .card-title .h6{
-                                "Food & Catering"
+                            div .card-header{
+                                div .card-title .h6{
+                                    (service.text)
+                                }
                             }
                         }
                     }
