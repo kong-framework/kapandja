@@ -3,12 +3,14 @@ pub use content::basic::ContentBasic;
 pub use content::basic2::ContentBasic2;
 pub use content::services::{ServiceItem, ServicesWidget};
 pub use hero::basic::HeroBasic;
+pub use lists::{ListBasic, ListItem};
 pub use nav::basic::NavBasic;
 pub use nav::NavItem;
 
 mod contact;
 mod content;
 mod hero;
+mod lists;
 mod nav;
 
 pub trait Widget {
