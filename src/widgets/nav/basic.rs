@@ -35,7 +35,7 @@ impl Widget for NavBasic {
             section .navbar-section{
                 @for nav in &self.right_navs {
                     @if nav.active {
-                        a .btn.btn-link.(NAVLINK) href=(nav.url){
+                        a .btn.btn-link.(NAVLINK) href=(nav.url) .(ACTIVE){
                             (nav.name)
                         }
                     } @else {
