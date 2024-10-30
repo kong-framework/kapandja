@@ -3,6 +3,7 @@ pub use content::basic::ContentBasic;
 pub use content::basic2::ContentBasic2;
 pub use content::basic3::ContentBasic3;
 pub use content::services::{ServiceItem, ServicesWidget};
+pub use forms::contact::ContactFormWidget;
 pub use hero::basic::HeroBasic;
 pub use hero::basic2::HeroBasic2;
 pub use lists::{ListBasic, ListItem};
@@ -12,6 +13,7 @@ pub use nav::NavItem;
 
 mod contact;
 mod content;
+mod forms;
 mod hero;
 mod lists;
 mod map;
