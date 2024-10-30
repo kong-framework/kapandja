@@ -57,12 +57,14 @@ impl Widget for HeroBasic {
 
 #{HERO_BTN}{{
  border-color: {button_border_color} !important;
- color: {button_text_color} !important;
  background_color: {button_background_color} !important;
  font-family: "Univers-Regular";
  border-radius: 0;
 }}
 
+#{HERO_BTN} a{{
+ color: {button_text_color} !important;
+}}
 
 @media only screen and (max-width: 1183px){{
   #{HERO} {{

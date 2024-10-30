@@ -1,8 +1,10 @@
 pub use contact::basic::ContactWidget;
 pub use content::basic::ContentBasic;
 pub use content::basic2::ContentBasic2;
+pub use content::basic3::ContentBasic3;
 pub use content::services::{ServiceItem, ServicesWidget};
 pub use hero::basic::HeroBasic;
+pub use hero::basic2::HeroBasic2;
 pub use lists::{ListBasic, ListItem};
 pub use map::{MapWidget, MapWidgetMarker};
 pub use nav::basic::NavBasic;
