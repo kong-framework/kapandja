@@ -55,14 +55,14 @@ impl Widget for HeroBasic {
   text-shadow: 1px 1px 1px #000;
 }}
 
-#{HERO_BTN}{{
+#{HERO} #{HERO_BTN}{{
  border-color: {button_border_color} !important;
- background_color: {button_background_color} !important;
+ background-color: {button_background_color} !important;
  font-family: "Univers-Regular";
  border-radius: 0;
 }}
 
-#{HERO_BTN} a{{
+#{HERO} #{HERO_BTN} a{{
  color: {button_text_color} !important;
 }}
 
