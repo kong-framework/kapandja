@@ -118,6 +118,10 @@ nav {{
   display: none;
 }}
 
+#MOBILE_NAVIGATION .btn.btn-link{{
+  color: {link_color} !important;
+}}
+
 @media only screen and (max-width: 663px){{
   #NAVIGATION_BAR{{
     display: none
