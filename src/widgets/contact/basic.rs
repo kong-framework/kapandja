@@ -7,6 +7,7 @@ pub struct ContactWidget {
     pub phone: String,
     pub email: String,
     pub location: String,
+    pub color: Color,
 }
 
 impl Widget for ContactWidget {
@@ -35,6 +36,7 @@ impl Widget for ContactWidget {
 
     fn css(&self) -> String {
         let background_color = &self.background_color.to_rgb_string();
+        let color = &self.color.to_rgb_string();
 
         format!(
             r#"
@@ -42,6 +44,7 @@ impl Widget for ContactWidget {
   padding: 4em;
   background-color: {background_color};
   font-family: "Univers-Regular";
+  color: {color}
 }}
 
 .contact-containers{{
