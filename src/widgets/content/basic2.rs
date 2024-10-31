@@ -37,7 +37,7 @@ impl Widget for ContentBasic2 {
         format!(
             r#"
 .basic2-conent-section{{
-  padding: 1em 4em;
+  padding: 4em;
   padding-bottom: 4em;
   background-color: {background_color};
   font-family: "Univers-Regular";
