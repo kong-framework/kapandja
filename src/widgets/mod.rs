@@ -1,3 +1,4 @@
+pub use brand::BrandWidget;
 pub use contact::basic::ContactWidget;
 pub use content::basic::ContentBasic;
 pub use content::basic2::ContentBasic2;
@@ -12,6 +13,7 @@ pub use map::{MapWidget, MapWidgetMarker};
 pub use nav::basic::NavBasic;
 pub use nav::NavItem;
 
+mod brand;
 mod contact;
 mod content;
 mod forms;
