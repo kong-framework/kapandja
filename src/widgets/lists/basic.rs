@@ -17,11 +17,11 @@ impl Widget for ListBasic {
     fn html(&self) -> String {
         html!(section .basic2-conent-section {
             div .columns{
-                div .col-6.col-sm-12{
+                div .col-4.col-sm-12{
                     img src=(self.image) .img-responsive{}
                 }
                 div .col-1{}
-                div .col-5.col-sm-12{
+                div .col-7.col-sm-12{
                     h5 #ListBasic {(self.heading)}
                     @for item in &self.content {
                         li { (item.text) }
@@ -40,7 +40,7 @@ impl Widget for ListBasic {
         format!(
             r#"
 .basic2-conent-section{{
-  padding: 1em 4em;
+  padding: 4em;
   padding-bottom: 4em;
   background-color: {background_color};
   font-family: "Univers-Regular";

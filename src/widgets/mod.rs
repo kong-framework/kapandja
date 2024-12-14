@@ -8,6 +8,7 @@ pub use content::services::{ServiceItem, ServicesWidget};
 pub use forms::contact::ContactFormWidget;
 pub use hero::basic::HeroBasic;
 pub use hero::basic2::HeroBasic2;
+pub use hero::basic3::HeroBasic3;
 pub use lists::{ListBasic, ListItem};
 pub use map::{MapWidget, MapWidgetMarker};
 pub use nav::basic::NavBasic;

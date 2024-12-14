@@ -13,7 +13,7 @@ pub struct ContentBasic3 {
 
 impl Widget for ContentBasic3 {
     fn html(&self) -> String {
-        html!(section .basic3-conent-section {
+        html!(section #ContentBasic3 .basic3-conent-section {
             div .columns{
                 div .col-10.col-sm-12{
                     h3 #(CONTENT_HEADING) {(self.heading)}
